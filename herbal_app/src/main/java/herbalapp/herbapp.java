@@ -25,5 +25,9 @@ public class herbapp {
         int index = random.nextInt(herbs.size());
         return herbs.get(index);
     }
+    @GetMapping("/herb/all")
+    public List<String> getAllHerbs() {
+        return herbs;
+    }
 }
 
