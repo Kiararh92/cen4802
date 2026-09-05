@@ -23,7 +23,12 @@ public class herbapp {
     @GetMapping("/herb/random")
     public String ranHerb() {
         int index = random.nextInt(herbs.size());
-        return herbs.get(index);
+        String herb = herbs.get(index);
+
+        return "<body style='background-color: #2c3e50; font-size: 18px;'>" +
+                "<h1>Random Herb:<h1>" +
+                "<p>" + herb + "</p>" +
+                "</body>";
     }
     @GetMapping("/herb/all")
     public List<String> getAllHerbs() {
