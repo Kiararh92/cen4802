@@ -26,7 +26,7 @@ public class herbapp {
         String herb = herbs.get(index);
 
         return "<body style='background-color: #2c3e50; font-size: 18px;'>" +
-                "<h1>Random Herb: </h1>" +
+                "<h1>Random Herb:</h1>" +
                 "<p>" + herb + "</p>" +
                 "</body>";
     }
