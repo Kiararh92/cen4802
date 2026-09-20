@@ -19,7 +19,7 @@ class herbappTest {
     @Test
     void testAllHerbs() {
         herbapp app  = new herbapp();
-        assertEquals(5, app.getAllHerbs().size(),
-                "Herb List should contain 5 items.");
+        assertEquals(8, app.getAllHerbs().size(),
+                "Herb List should contain 8 items.");
     }
 }
