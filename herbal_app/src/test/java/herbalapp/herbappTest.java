@@ -17,9 +17,13 @@ class herbappTest {
     }
 
     @Test
-    void testAllHerbs() {
-        herbapp app  = new herbapp();
-        assertEquals(8, app.getAllHerbs().size(),
-                "Herb List should contain 8 items.");
+    void testAllHerbsHtml() {
+        herbapp app = new herbapp();
+        String html = app.getAllHerbs();
+
+        assertTrue(html.contains("<ul>"));
+        assertTrue(html.contains("<li>"));
+        assertTrue(html.contains("Lemongrass"));
     }
+
 }

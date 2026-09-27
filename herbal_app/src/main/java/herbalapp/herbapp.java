@@ -33,9 +33,25 @@ public class herbapp {
                 "<p>" + herb + "</p>" +
                 "</body>";
     }
+
     @GetMapping("/herb/all")
-    public List<String> getAllHerbs() {
-        return herbs;
+    public String getAllHerbs() {
+
+        StringBuilder html = new StringBuilder();
+
+        html.append("<body style='background-color: #2c3e50; font-size: 18px; color: black;'>");
+        html.append("<h1>All Herbs:</h1>");
+        html.append("<ul>");
+
+        for (String herb : herbs) {
+            html.append("<li>").append(herb).append("</li>");
+        }
+
+        html.append("</ul>");
+        html.append("</body>");
+
+        return html.toString();
     }
+
 }
 
