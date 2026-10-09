@@ -7,6 +7,24 @@ import static org.junit.jupiter.api.Assertions.*;
 class herbappTest {
 
     @Test
+    void testHomePageNavigationButtons(){
+        herbapp app = new herbapp();
+        String html = app.home();
+
+        assertTrue(html.contains("/herb/all"));
+        assertTrue(html.contains("/herb/random"));
+    }
+
+    @Test
+    void testReturnHomeButtons(){
+        herbapp app = new herbapp();
+        String html = app.home();
+
+        assertTrue(app.ranHerb().contains("/herb"));
+        assertTrue(app.getAllHerbs().contains("/herb"));
+    }
+
+    @Test
     void ranHerb() {
         herbapp app = new herbapp();
         String html = app.ranHerb();
