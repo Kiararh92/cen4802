@@ -23,6 +23,15 @@ public class herbapp {
 
     private final Random random = new Random();
 
+    @GetMapping("/herb")
+    public String home() {
+        return """
+            <body style='background-color: #2c3e50; font-size: 18px; '>
+                <h1>Home Page</h1>
+            </body>
+            """;
+    }
+
     @GetMapping("/herb/random")
     public String ranHerb() {
         int index = random.nextInt(herbs.size());
