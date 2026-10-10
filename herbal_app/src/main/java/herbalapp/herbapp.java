@@ -23,7 +23,7 @@ public class herbapp {
 
     private final Random random = new Random();
 
-    @GetMapping("/herb")
+    @GetMapping("/")
     public String home() {
         return """
             <body style='background-color: #2c3e50; font-size: 18px; '>
