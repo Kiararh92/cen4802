@@ -16,8 +16,8 @@ public class herbapp {
             "Yarrow - Commonly used to treat wounds and soothe an upset stomach",
             "Kava - Acts as a powerful relaxant, aids with anxiety and insomnia",
             "Chamomile - Promotes sleep and reduces mild levels of anxiety",
-            "Holy Basil - Helps manage physical and mental stress",
-            "Valerian Root - Commonly used to treat insomnia, restlessness, and deep nervous tension"
+            "Holy Basil - Helps manage physical and mental stress"
+
             );
 
 
