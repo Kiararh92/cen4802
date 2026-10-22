@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: herbal-app
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: herbal-app
+
+  template:
+    metadata:
+      labels:
+        app: herbal-app
+    spec:
+      containers:
+        - name: herbal-app
+          image: herbal_app:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
