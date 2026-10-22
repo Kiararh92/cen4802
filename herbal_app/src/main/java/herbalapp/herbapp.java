@@ -23,13 +23,13 @@ public class herbapp {
 
     private final Random random = new Random();
 
-    @GetMapping("/")
+    @GetMapping("/herb")
     public String home() {
         return """
             <body style='background-color: #2c3e50; font-size: 18px; '>
                 <h1>Home Page</h1>
-                <a href=' /herb/all'><button>View All Herbs</button></a>
-                <a href=' /herb/random'><button>Random Herb</button></a>
+                <a href='/herb/all'><button>View All Herbs</button></a>
+                <a href='/herb/random'><button>Random Herb</button></a>
             </body>
             """;
     }
@@ -42,7 +42,7 @@ public class herbapp {
         return "<body style='background-color: #2c3e50; font-size: 18px;'>" +
                 "<h1>Random Herb:</h1>" +
                 "<p>" + herb + "</p>" +
-                "<a href=' /herb'><button>Homepage</button></a>" +
+                "<a href='/herb'><button>Homepage</button></a>" +
                 "</body>";
     }
 
@@ -60,7 +60,7 @@ public class herbapp {
         }
 
         html.append("</ul>");
-        html.append("<a href=' /herb'><button>Homepage</button></a>");
+        html.append("<a href='/herb'><button>Homepage</button></a>");
         html.append("</body>");
 
         return html.toString();
