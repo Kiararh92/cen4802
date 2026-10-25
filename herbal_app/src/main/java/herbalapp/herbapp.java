@@ -1,5 +1,7 @@
 package herbalapp;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -8,6 +10,10 @@ import java.util.Random;
 
 @RestController
 public class herbapp {
+
+    private static final Logger logger =
+            LoggerFactory.getLogger(herbapp.class);
+
 
     private final List<String> herbs = List.of(
             "Lemongrass - A simple herb often used to relieve stress",
@@ -25,6 +31,7 @@ public class herbapp {
 
     @GetMapping("/herb")
     public String home() {
+        logger.info("Homepage accessed");
         return """
             <body style='background-color: #2c3e50; font-size: 18px; '>
                 <h1>Home Page</h1>
@@ -38,6 +45,8 @@ public class herbapp {
     public String ranHerb() {
         int index = random.nextInt(herbs.size());
         String herb = herbs.get(index);
+        logger.info("Random herb accessed");
+        logger.debug("Random index selectedL {}", index);
 
         return "<body style='background-color: #2c3e50; font-size: 18px;'>" +
                 "<h1>Random Herb:</h1>" +
@@ -48,6 +57,8 @@ public class herbapp {
 
     @GetMapping("/herb/all")
     public String getAllHerbs() {
+        logger.info("All herbs accessed");
+        logger.warn("User requested full herb list");
 
         StringBuilder html = new StringBuilder();
 
@@ -64,6 +75,12 @@ public class herbapp {
         html.append("</body>");
 
         return html.toString();
+    }
+
+    @GetMapping("/herb/error")
+    public String herbError() {
+        logger.error("Generated error");
+        throw new RuntimeException("Demonstration error");
     }
 
 }
